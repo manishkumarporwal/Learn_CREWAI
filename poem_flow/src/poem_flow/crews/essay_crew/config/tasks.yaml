@@ -1,0 +1,39 @@
+research_essay_topic:
+  description: >
+    Research the topic "{topic}" and compile:
+    - A strong thesis statement.
+    - {paragraph_count} distinct arguments or sub-topics for body paragraphs.
+    - Supporting facts, statistics, or examples for each argument.
+    - One counterargument and a rebuttal.
+    Keep the research concise and bullet-pointed.
+  expected_output: >
+    A structured research brief with a thesis, {paragraph_count} argument
+    points (each with supporting evidence), and a counterargument/rebuttal.
+  agent: essay_researcher
+
+write_essay:
+  description: >
+    Using the research brief, write a complete academic essay on "{topic}".
+    Structure:
+    1. Introduction (with a clear thesis statement)
+    2. {paragraph_count} body paragraphs (one argument per paragraph, with
+       topic sentence, evidence, and analysis)
+    3. Conclusion (summarise and restate thesis)
+    Maintain a formal academic tone throughout.
+  expected_output: >
+    A full academic essay on "{topic}" with an introduction, {paragraph_count}
+    body paragraphs, and a conclusion. Formatted in markdown.
+  agent: essay_writer
+
+edit_essay:
+  description: >
+    Edit and proofread the essay on "{topic}". Check for:
+    - Grammar and spelling errors.
+    - Clarity and sentence flow.
+    - Strong transitions between paragraphs.
+    - Consistent academic tone.
+    Return the final polished essay, ready to submit.
+  expected_output: >
+    A polished, error-free academic essay on "{topic}" in markdown format.
+  agent: essay_editor
+  output_file: essay_output.md

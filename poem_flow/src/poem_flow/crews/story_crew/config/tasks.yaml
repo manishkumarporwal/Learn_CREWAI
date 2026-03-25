@@ -1,0 +1,46 @@
+plan_story:
+  description: >
+    Create a detailed story outline for a "{genre}" short story about "{topic}".
+    The outline must include:
+    - Title
+    - Setting (time, place, atmosphere)
+    - Main characters (name, trait, motivation)
+    - Three-act plot structure:
+        Act 1 - Setup & inciting incident
+        Act 2 - Rising action & conflict
+        Act 3 - Climax, resolution & ending
+    - Core theme or message
+  expected_output: >
+    A structured story outline with title, setting, characters, three-act
+    structure, and theme. Clearly formatted in bullet points.
+  agent: story_planner
+
+write_story:
+  description: >
+    Using the outline provided, write a complete "{genre}" short story about
+    "{topic}". Requirements:
+    - Vivid opening that hooks the reader immediately.
+    - Rich sensory descriptions of setting.
+    - Natural, character-revealing dialogue.
+    - Clear three-act structure with a satisfying climax and resolution.
+    - Target length: 600-900 words.
+  expected_output: >
+    A complete, engaging "{genre}" short story about "{topic}",
+    600-900 words, written in flowing prose. Formatted in markdown.
+  agent: story_writer
+
+critique_and_polish_story:
+  description: >
+    Critically review the "{genre}" story about "{topic}" and produce a
+    polished final version. Address:
+    - Pacing: does it move too fast or slow in any section?
+    - Dialogue: is it natural and character-specific?
+    - Descriptions: are they vivid but not overwritten?
+    - Emotional impact: does the ending land?
+    - Any grammar or stylistic issues.
+    Rewrite the story with all improvements applied.
+  expected_output: >
+    The final, polished version of the "{genre}" short story about "{topic}",
+    publish-ready, in markdown format.
+  agent: story_critic
+  output_file: story_output.md

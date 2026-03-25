@@ -1,0 +1,24 @@
+[project]
+name = "advanced_crewai"
+version = "0.1.0"
+description = "advanced_crewai using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.9.3"
+]
+
+[project.scripts]
+advanced_crewai = "advanced_crewai.main:run"
+run_crew = "advanced_crewai.main:run"
+train = "advanced_crewai.main:train"
+replay = "advanced_crewai.main:replay"
+test = "advanced_crewai.main:test"
+run_with_trigger = "advanced_crewai.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
