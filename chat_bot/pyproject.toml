@@ -1,0 +1,31 @@
+[project]
+name = "chat_bot"
+version = "0.1.0"
+description = "chat_bot using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.9.3"
+]
+
+[project.scripts]
+chat_bot = "chat_bot.main:run"
+run_crew = "chat_bot.main:run"
+train = "chat_bot.main:train"
+replay = "chat_bot.main:replay"
+test = "chat_bot.main:test"
+run_with_trigger = "chat_bot.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+
+# ── Intel Mac fix ─────────────────────────────────────────────────────────────
+# onnxruntime dropped macOS x86_64 wheels after v1.23.0.
+[tool.uv]
+override-dependencies = [
+    "onnxruntime<=1.23.0 ; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
